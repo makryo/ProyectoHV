@@ -13,6 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <a href="{{ url('/logout') }}"> logout </a>
 
                     You are logged in!
                 </div>
