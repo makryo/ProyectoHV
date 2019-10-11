@@ -16,6 +16,12 @@
                     <a href="{{ url('/logout') }}"> logout </a>
 
                     You are logged in!
+                    <a href="https://pay.google.com/gp/p/js/pay.js">pay</a>
+                    
+                    <script async
+                     src="https://pay.google.com/gp/p/js/pay.js"
+                         onload="onGooglePayLoaded()">
+                    </script>
                 </div>
             </div>
         </div>
