@@ -23,4 +23,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::get('/logout', 'LogoutController@Logout');
+
+Route::resource('/usuarios', 'UserController');
