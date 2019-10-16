@@ -13,20 +13,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{ url('/logout') }}"> logout </a>
-
-                    You are logged in!
-                    <br>
-                    hello user
-                    <a href="https://pay.google.com/gp/p/js/pay.js">pay</a>
+                    <h1>Detalle</h1>
                     
-                    <script async
-                     src="https://pay.google.com/gp/p/js/pay.js"
-                         onload="onGooglePayLoaded()">
-                    </script>
+                    <dl>
+                        <dt>codigo</dt><dd>{{ $user->id }}</dd>
+                        <dt>nombre</dt><dd>{{ $user->name }}</dd>
+                        <dt>correo</dt><dd>{{ $user->email }}</dd>
+                    </dl>
+                    <br>  
+                    <a href="{{ route('home.index') }}" type="button" class="btn btn-danger">regresar</a>
+                    <a href="{{ route('home.edit', $user->id) }}">Editar</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+

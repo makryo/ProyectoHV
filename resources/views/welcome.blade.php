@@ -94,7 +94,7 @@
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
-                         <a href="{{ route('register') }}">register</a>
+                         
                     @endauth
                 </div>
             @endif

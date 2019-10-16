@@ -58,7 +58,7 @@
                                             <td>{{ $Lista->id }}</td>
                                             <td>{{ $Lista->name }}</td>
                                             <td>{{ $Lista->email }}</td>
-                                            <td><a href="#">detalle</a></td>
+                                            <td><a href="{{ route('home.show', $Lista->id) }}">detalle</a></td>
                                         </tr>
                                     @endforeach
                                     
@@ -68,7 +68,9 @@
                             <!-- Modal footer -->
                             <div class="modal-footer">
 
-                                <button type="button" class="btn btn-success">nuevo</button>
+                                
+                                    <a href="{{ route('home.create') }}" type="button" class="btn btn-success">nuevo</a> 
+                                
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                             

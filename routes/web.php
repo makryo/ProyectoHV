@@ -21,9 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
+Route::resource('/home', 'HomeController');
+//Route::resource('/create', 'HomeController');
 Route::get('/logout', 'LogoutController@Logout');
 
-Route::resource('/usuarios', 'UserController');
+
