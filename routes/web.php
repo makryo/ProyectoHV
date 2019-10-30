@@ -12,17 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
 Route::resource('/home', 'HomeController');
-//Route::resource('/create', 'HomeController');
-Route::get('/logout', 'LogoutController@Logout');
 
+Route::get('/logout', 'LogoutController@Logout');
+Route::resource('/cliente', 'ClientController');
 
