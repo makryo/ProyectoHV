@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Client;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -42,6 +45,8 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
+        $password = User::get('password');
+        $hashed = Hash::make($password);
         $user = User::create($request->all());
         return view('usuarios/show',compact('user'));
     }

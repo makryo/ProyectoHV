@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Client;
+use App\Service;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clientes/create');
+        //
     }
 
     /**
@@ -34,8 +34,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $client = Client::create($request->all());
-        return view('clientes/show',compact('client'));
+        //
     }
 
     /**
@@ -46,8 +45,7 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        $client = Client::find($id);
-        return view('clientes/show', compact('client'));
+        //
     }
 
     /**
@@ -58,8 +56,7 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $Edita = Client::findOrFail($id);
-        return view('clientes/edit', compact('Edita'));
+        //
     }
 
     /**
@@ -71,9 +68,7 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $client = Client::find($id);
-        $client -> update($request ->all());
-        return view('clientes/show', compact('client'));
+        //
     }
 
     /**

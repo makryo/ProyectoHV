@@ -18,11 +18,13 @@
                     <dl>
                         <dt>codigo</dt><dd>{{ $client->id }}</dd>
                         <dt>nombre</dt><dd>{{ $client->fullname }}</dd>
+                        <dt>numero</dt><dd>{{ $client->cellphone }}</dd>
                         <dt>correo</dt><dd>{{ $client->email }}</dd>
+                        <dt>direccion</dt><dd>{{ $client->address }}</dd>
                     </dl>
                     <br>  
-                    <a href="#" type="button" class="btn btn-danger">regresar</a>
-                    <a href="#">Editar</a>
+                    <a href="/" type="button" class="btn btn-danger">regresar</a>
+                    <a href="{{ route('cliente.edit', $client->id) }}">Editar</a>
                 </div>
             </div>
         </div>

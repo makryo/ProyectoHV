@@ -25,4 +25,7 @@ Route::resource('/home', 'HomeController');
 
 Route::get('/logout', 'LogoutController@Logout');
 Route::resource('/cliente', 'ClientController');
-
+Route::resource('/empleado', 'EmployeeController');
+Route::resource('/habitacion', 'RoomController');
+Route::resource('/servicios', 'ServiceController');
+Route::resource('/Restaurante', 'MenuRestaurantController');

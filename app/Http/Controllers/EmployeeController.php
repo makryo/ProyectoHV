@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Client;
+use App\Employee;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clientes/create');
+        return view('Empleados/create');
     }
 
     /**
@@ -34,8 +34,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $client = Client::create($request->all());
-        return view('clientes/show',compact('client'));
+        $employee = Employee::create($request->all());
+        return view('Empleados/show',compact('employee'));
     }
 
     /**
@@ -46,8 +46,8 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        $client = Client::find($id);
-        return view('clientes/show', compact('client'));
+        $employee = Employee::find($id);
+        return view('Empleados/show', compact('employee'));
     }
 
     /**
@@ -58,8 +58,8 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $Edita = Client::findOrFail($id);
-        return view('clientes/edit', compact('Edita'));
+        $Edita = Employee::findOrFail($id);
+        return view('Empleados/edit', compact('Edita'));
     }
 
     /**
@@ -71,9 +71,9 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $client = Client::find($id);
-        $client -> update($request ->all());
-        return view('clientes/show', compact('client'));
+        $employee = Employee::find($id);
+        $employee -> update($request ->all());
+        return view('Empleados/show', compact('employee'));
     }
 
     /**
