@@ -23,7 +23,7 @@ class MenuRestaurantController extends Controller
      */
     public function create()
     {
-        //
+        return view('Restaurante/create');
     }
 
     /**
@@ -34,7 +34,8 @@ class MenuRestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $menu = MenuRestaurant::create($request->all());
+        return view('Restaurante/show',compact('menu'));
     }
 
     /**
@@ -45,7 +46,8 @@ class MenuRestaurantController extends Controller
      */
     public function show($id)
     {
-        //
+        $menu = MenuRestaurant::find($id);
+        return view('Restaurante/show', compact('menu'));
     }
 
     /**
@@ -56,7 +58,8 @@ class MenuRestaurantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Edita = MenuRestaurant::findOrFail($id);
+        return view('Restaurante/edit', compact('Edita'));
     }
 
     /**
@@ -68,7 +71,9 @@ class MenuRestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $menu = MenuRestaurant::find($id);
+        $menu -> update($request ->all());
+        return view('Restaurante/show', compact('menu'));
     }
 
     /**

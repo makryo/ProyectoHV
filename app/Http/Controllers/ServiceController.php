@@ -23,7 +23,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('Servicios/create');
     }
 
     /**
@@ -34,7 +34,8 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $service = Service::create($request->all());
+        return view('Servicios/show',compact('service'));
     }
 
     /**
@@ -45,7 +46,8 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        //
+        $service = Service::find($id);
+        return view('Servicios/show', compact('service'));
     }
 
     /**
@@ -56,7 +58,8 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Edita = Service::findOrFail($id);
+        return view('Servicios/edit', compact('Edita'));
     }
 
     /**
@@ -68,7 +71,9 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $service = Service::find($id);
+        $service -> update($request ->all());
+        return view('Servicios/show', compact('service'));
     }
 
     /**

@@ -28,7 +28,7 @@ $Menu = MenuRestaurant::all();
                         </div>
                     @endif
                     <h1>Bienvenido al sistema {{ Auth::user()->name }}</h1>
-                    hola soy el tio gilipollas
+                    
                     <div class="container">
                    
                     <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#habitaciones">habitaciones</button>
@@ -264,7 +264,7 @@ $Menu = MenuRestaurant::all();
                                             <td>{{ $Lista->description }}</td>
                                             <td>{{ $Lista->status }}</td>
                         
-                                            <td><a href="{{ route('empleado.show', $Lista->id) }}">detalle</a></td>
+                                            <td><a href="{{ route('servicios.show', $Lista->id) }}">detalle</a></td>
                                         </tr>
                                     @endforeach
                                     
@@ -275,7 +275,7 @@ $Menu = MenuRestaurant::all();
                             <div class="modal-footer">
 
                                 
-                                    <a href="{{ route('empleado.create') }}" type="button" class="btn btn-success">nuevo</a> 
+                                    <a href="{{ route('servicios.create') }}" type="button" class="btn btn-success">nuevo</a> 
                                 
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
@@ -371,7 +371,7 @@ $Menu = MenuRestaurant::all();
                                             <td>{{ $Lista->name }}</td>
                                             <td>{{ $Lista->price }}</td>
                                             
-                                            <td><a href="{{ route('empleado.show', $Lista->id) }}">detalle</a></td>
+                                            <td><a href="{{ route('Restaurante.show', $Lista->id) }}">detalle</a></td>
                                         </tr>
                                     @endforeach
                                     
@@ -382,7 +382,7 @@ $Menu = MenuRestaurant::all();
                             <div class="modal-footer">
 
                                 
-                                    <a href="{{ route('empleado.create') }}" type="button" class="btn btn-success">nuevo</a> 
+                                    <a href="{{ route('Restaurante.create') }}" type="button" class="btn btn-success">nuevo</a> 
                                 
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
