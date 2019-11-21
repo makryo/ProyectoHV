@@ -19,10 +19,10 @@
                             {{ csrf_field() }}
                             <label>Formulario</label><br>
                             <br>
-                            <input type="text" name="fullname" placeholder="nombre"><br>
-                            <input type="text" name="cellphone" placeholder="telefono"><br>
-                            <input type="text" name="email" placeholder="correo"><br>
-                            <input type="text" name="address" placeholder="direccion"><br>
+                            <input type="text" name="fullname" placeholder="nombre" required><br>
+                            <input type="text" name="cellphone" placeholder="telefono" required><br>
+                            <input type="text" name="email" placeholder="correo" required><br>
+                            <input type="text" name="address" placeholder="direccion" required><br>
                             <input type="submit" name="Guardar"><br>
                         </form>
               

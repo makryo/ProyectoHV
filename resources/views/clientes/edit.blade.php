@@ -23,10 +23,10 @@
                             {{ csrf_field() }}
                             <label>Formulario</label><br>
                             <br>
-                            <input type="text" name="fullname" value="{{ $Edita->fullname }}"><br>
-                            <input type="text" name="cellphone" value="{{ $Edita->cellphone }}"><br>
-                            <input type="text" name="email" value="{{ $Edita->email }}"><br>
-                            <input type="text" name="address" value="{{ $Edita->address }}"><br>
+                            <input type="text" name="fullname" value="{{ $Edita->fullname }}" required><br>
+                            <input type="text" name="cellphone" value="{{ $Edita->cellphone }}" required><br>
+                            <input type="text" name="email" value="{{ $Edita->email }}" required><br>
+                            <input type="text" name="address" value="{{ $Edita->address }}" required><br>
                             <input type="submit" name="Guardar"><br>
                         </form>
 

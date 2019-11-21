@@ -4,15 +4,25 @@ use App\Employee;
 use App\Service;
 use App\Rooms;
 use App\MenuRestaurant;
+use App\Reservacion;
+use database\connection;
+use resources\views\layouts\ModalClient;
 
 $Clients = Client::all();
 $Employee = Employee::all();
 $Service = Service::all();
 $Rooms = Rooms::all();
 $Menu = MenuRestaurant::all();
+$reserv = Reservacion::all();
+
+$username = 'debian-sys-maint';
+$password = 'ws1SC0JreanoNAJ8';
+$database = 'victoria';
+$host = 'localhost';
 
 ?>
 @extends('layouts.app')
+
 
 @section('content')
 <div class="container">
@@ -46,6 +56,10 @@ $Menu = MenuRestaurant::all();
                             
                             <!-- Modal body -->
                             <div class="modal-body">
+
+
+
+                                
                                 
                                 <table class="table table-striped">
 
@@ -75,6 +89,7 @@ $Menu = MenuRestaurant::all();
                                             <td><a href="{{ route('habitacion.show', $Lista->id) }}">detalle</a></td>
                                         </tr>
                                     @endforeach
+                                    
                                     
                                     </table>
                             </div>
@@ -118,6 +133,8 @@ $Menu = MenuRestaurant::all();
                             <!-- Modal body -->
                             <div class="modal-body">
                                 
+                            
+
                                 <table class="table table-striped">
 
                                     <tr>
@@ -140,6 +157,8 @@ $Menu = MenuRestaurant::all();
                                             <td><a href="{{ route('cliente.show', $Lista->id) }}">detalle</a></td>
                                         </tr>
                                     @endforeach
+
+                                  
                                     
                                     </table>
                             </div>
@@ -389,12 +408,77 @@ $Menu = MenuRestaurant::all();
                             
                           </div>
                         </div>
-                      </div>      
+                      </div>
+
+                        <br>
+                        <br>
+                        <br>
+
                 
+                    <input id="searchTerm" type="text" onkeyup="doSearch()" class="form-control" size="25" / >
 
+                     <table class="table table-striped" id="datos">
 
+                                    <tr>
+                                        
+                                        <th>Numero</th>
+                                        <th>nombre</th>
+                                        <th>Atendio</th>
+                                        <th>entrada</th>
+                                        <th>salida</th>
+                                        <th>detalle</th>
+                                    </tr>   
+                                
+                                     <?php
+                        //include('database/connection.php');
+                        try {
 
+    $db_con = new PDO("mysql:host=$host; dbname=$database; charset=utf8", $username, $password);
+    $db_con -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+ }catch (PDOException $e){
+
+    echo $e->getMessage();
+    
+ }
+        $sql = 'select rooms.number, clients.fullname, users.name, rooms.price, fech_inicio, fech_fin 
+                    from reservacions, clients, rooms, users 
+                    where reservacions.room_id = rooms.id 
+                    and reservacions.client_id = clients.id 
+                    and reservacions.users_id = users.id;';
+                        $result = $db_con->query($sql);
+                        foreach ($result as $values) {
+                            
+                                echo "<tr><td>"
+                                    . $values["number"]
+                                    . "</td><td>"
+                                    . $values["fullname"]
+                                    . "</td><td>"
+                                    . $values["name"]
+                                    . "</td><td>"
+                                    . $values["fech_inicio"]
+                                    . "</td><td>"
+                                    . $values["fech_fin"]
+                                    . "</td><td>"
+                                    . "<a href='update.php"
+                                    . "?id=" . $values["number"]
+                                    . "&name=" . $values["fullname"]
+                                    . "&date=" . $values["name"]
+                                    . "' class = 'button is-small is-warning is-outlined'><span class='icon is-small'><i class='fas fa-edit'></i></span><span>Editar</span></a></td>"
+                                    . "</td><td>"
+                                 ;
+                            
+                        }
+                        ?>
+                                    <tr class='noSearch hide'>
+
+                                        <td colspan="5"></td>
+
+                                    </tr>
+                                    </table>
+                                    <div align="center">
+                                    <a href="{{ route('print') }}" type="button" class="btn btn-outline-dark">generar pdf</a>
+                                    </div> 
 
 
 

@@ -14,6 +14,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role');
     }
 
+     public function reservUser()
+    {
+        return $this->hasMany('App\Reservacion');
+    }
+
     public function authorizeRoles($roles){
         if ($this->hasAnyRoles($roles)) {
             return true;
