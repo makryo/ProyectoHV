@@ -125,7 +125,7 @@
 
 <body background="https://www.larutadelsorigens.cat/filelook/full/128/1283336/marmol-wallpaper.jpg">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Hotel Victoria

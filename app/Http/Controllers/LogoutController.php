@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class LogoutController extends Controller
 {
+	
     public function logout () {
     //logout user
     auth()->logout();

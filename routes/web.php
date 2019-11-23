@@ -29,4 +29,5 @@ Route::resource('/empleado', 'EmployeeController');
 Route::resource('/habitacion', 'RoomController');
 Route::resource('/servicios', 'ServiceController');
 Route::resource('/Restaurante', 'MenuRestaurantController');
+Route::resource('/reservacion', 'ReservaController');
 Route::name('print')->get('/imprimir', 'GeneradorController@imprimir');

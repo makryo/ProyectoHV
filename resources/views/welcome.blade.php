@@ -37,7 +37,7 @@ $host = 'localhost';
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>Bienvenido al sistema {{ Auth::user()->name }}</h1>
+                    <h1>Bienvenido al sistema: {{ Auth::user()->name }}</h1>
                     
                     <div class="container">
                    
@@ -414,14 +414,20 @@ $host = 'localhost';
                         <br>
                         <br>
 
+                    <h1>Tabla de reservaciones</h1>
+                    <br>
+                    <h5>Busqueda de reservaciones:</h5>
                 
                     <input id="searchTerm" type="text" onkeyup="doSearch()" class="form-control" size="25" / >
 
-                     <table class="table table-striped" id="datos">
+                    <br>
+
+                    <table class="table table-striped" id="datos">
 
                                     <tr>
                                         
                                         <th>Numero</th>
+                                        <th>Precio</th>
                                         <th>nombre</th>
                                         <th>Atendio</th>
                                         <th>entrada</th>
@@ -441,7 +447,7 @@ $host = 'localhost';
     echo $e->getMessage();
     
  }
-        $sql = 'select rooms.number, clients.fullname, users.name, rooms.price, fech_inicio, fech_fin 
+        $sql = 'select rooms.number, rooms.price, clients.fullname, users.name, rooms.price, fech_inicio, fech_fin 
                     from reservacions, clients, rooms, users 
                     where reservacions.room_id = rooms.id 
                     and reservacions.client_id = clients.id 
@@ -451,6 +457,8 @@ $host = 'localhost';
                             
                                 echo "<tr><td>"
                                     . $values["number"]
+                                    . "</td><td>"
+                                    . $values["price"]
                                     . "</td><td>"
                                     . $values["fullname"]
                                     . "</td><td>"
@@ -478,6 +486,9 @@ $host = 'localhost';
                                     </table>
                                     <div align="center">
                                     <a href="{{ route('print') }}" type="button" class="btn btn-outline-dark">generar pdf</a>
+                                 
+
+                                    <a href="{{ route('reservacion.create') }}" type="button" class="btn btn-outline-dark">nueva reservacion</a>
                                     </div> 
 
 

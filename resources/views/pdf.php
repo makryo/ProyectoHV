@@ -29,7 +29,7 @@ th {
 </head>
 <body>
 
-<h1>Informe de Consultas de cotizacion</h1>
+<h1>Informe de reservaciones </h1>
 
 <table class="table table-striped">
 

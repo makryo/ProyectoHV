@@ -1,11 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Reservacion;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+
 
 class ReservaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +32,7 @@ class ReservaController extends Controller
      */
     public function create()
     {
-        //
+        return view('reservacion/create');
     }
 
     /**
@@ -34,7 +43,8 @@ class ReservaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reserva = Reservacion::create($request->all());
+        return view('reservacion/create',compact('reserva'));        
     }
 
     /**
