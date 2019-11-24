@@ -25,6 +25,75 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <style type="text/css">
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+        input[type=email], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type="date"]::-webkit-clear-button {
+        display: none;
+        }
+
+   
+        input[type="date"]::-webkit-inner-spin-button { 
+            display: none;
+        }
+
+       
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            color: #2c3e50;
+        }
+
+        input[type="date"] {
+            appearance: none;
+            -webkit-appearance: none;
+            color: #95a5a6;
+            font-family: "Helvetica", arial, sans-serif;
+            font-size: 18px;
+            border:1px solid #ecf0f1;
+            background:#ecf0f1;
+            padding:5px;
+            display: inline-block !important;
+            visibility: visible !important;
+        }
+
+        input[type="date"], focus {
+            color: #95a5a6;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+        }
+
+        input[type=submit] {
+            background-color: #d0d0d0;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #000000;
+            font-size:16px;
+            font-weight: bold;
+            line-height: 1.4;
+            padding: 10px;
+            width: 180px
+        }
+    </style>
+
 
     <script language="javascript">
 

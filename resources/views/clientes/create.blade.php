@@ -19,10 +19,15 @@
                             {{ csrf_field() }}
                             <label>Formulario</label><br>
                             <br>
+
                             <input type="text" name="fullname" placeholder="nombre" required><br>
-                            <input type="text" name="cellphone" placeholder="telefono" required><br>
-                            <input type="text" name="email" placeholder="correo" required><br>
+
+                            <input type="text" name="cellphone" placeholder="telefono" pattern="[0-9]{8}" title="error" required><br>
+                            
+                            <input type="email" name="email" placeholder="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="error"  required><br>
+
                             <input type="text" name="address" placeholder="direccion" required><br>
+
                             <input type="submit" name="Guardar"><br>
                         </form>
               
