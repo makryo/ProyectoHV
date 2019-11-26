@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Editar registro</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -21,17 +21,24 @@
                             @csrf
                             @method('PATCH')
                             {{ csrf_field() }}
-                            <label>Formulario</label><br>
                             <br>
-                            <input type="text" name="number" value="{{ $Edita->number }}"><br>
-                            <input type="text" name="price" value="{{ $Edita->price }}"><br>
-                            <input type="text" name="level" value="{{ $Edita->level }}"><br>
-                            <input type="text" name="state" value="{{ $Edita->state }}"><br>
-                            <input type="text" name="air" value="{{ $Edita->air }}"><br>
-                            <input type="text" name="implement" value="{{ $Edita->implement }}"><br>
-                            <input type="text" name="furniture" value="{{ $Edita->furniture }}"><br>
-                            <input type="text" name="dimension" value="{{ $Edita->dimension }}"><br>
-                            <input type="submit" name="Guardar"><br>
+                            <input type="text" name="number" value="{{ $Edita->number }}" required>
+                            <br>
+                            <input type="number" name="price" value="{{ $Edita->price }}" min="0.00" max="10000.00" step="{{ 'Q' }}0.01" required>
+                            <br>
+                            <input type="text" name="level" value="{{ $Edita->level }}" required>
+                            <br>
+                            <input type="text" name="state" value="{{ $Edita->state }}" required>
+                            <br>
+                            <input type="text" name="air" value="{{ $Edita->air }}" required>
+                            <br>
+                            <input type="text" name="implement" value="{{ $Edita->implement }}" required>
+                            <br>
+                            <input type="text" name="furniture" value="{{ $Edita->furniture }}" required>
+                            <br>
+                            <input type="text" name="dimension" value="{{ $Edita->dimension }}" required>
+                            <br>
+                            <input type="submit" name="Guardar" value="Guardar">
                         </form>
 
                       

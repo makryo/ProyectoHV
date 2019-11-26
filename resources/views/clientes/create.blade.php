@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Crear registro</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -17,18 +17,17 @@
                     <div class="container">
                         <form method="post" action="{{ route('cliente.store') }}">
                             {{ csrf_field() }}
-                            <label>Formulario</label><br>
                             <br>
 
-                            <input type="text" name="fullname" placeholder="nombre" required><br>
+                            <input type="text" name="fullname" placeholder="Nombre" required><br>
 
-                            <input type="text" name="cellphone" placeholder="telefono" pattern="[0-9]{8}" title="error" required><br>
+                            <input type="text" name="cellphone" placeholder="Teléfono" pattern="[0-9]{8}" title="error" required><br>
                             
-                            <input type="email" name="email" placeholder="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="error"  required><br>
+                            <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="error"  required><br>
 
-                            <input type="text" name="address" placeholder="direccion" required><br>
+                            <input type="text" name="address" placeholder="Dirección" required><br>
 
-                            <input type="submit" name="Guardar"><br>
+                            <input type="submit" value="Guardar"><br>
                         </form>
               
                       

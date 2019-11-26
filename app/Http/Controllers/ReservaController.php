@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 
 class ReservaController extends Controller
@@ -66,7 +67,8 @@ class ReservaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Edita = Reservacion::findOrFail($id);
+        return view('reservacion/edit', compact('Edita'));
     }
 
     /**
@@ -78,7 +80,9 @@ class ReservaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $reserva = Reservacion::find($id);
+        $reserva -> update($request ->all());
+        return view('reservacion/mensaje', compact('reserva'));
     }
 
     /**
@@ -89,6 +93,8 @@ class ReservaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reservacion::find($id)->delete();
+        $Lista = Reservacion::all();
+        return view('reservacion.mensajeElimina', compact('Lista'));
     }
 }

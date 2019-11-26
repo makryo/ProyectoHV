@@ -36,6 +36,36 @@
           box-sizing: border-box;
         }
 
+        input[type=password], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+        input[type=number], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+        .select{
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
         input[type=email], select {
           width: 100%;
           padding: 12px 20px;
@@ -86,12 +116,32 @@
             border-radius: 5px;
             cursor: pointer;
             color: #000000;
-            font-size:16px;
+            font-size:14px;
             font-weight: bold;
             line-height: 1.4;
-            padding: 10px;
-            width: 180px
+            padding: 5px;
+            width: 100px
         }
+
+        .boton {
+            background-color: #d0d0d0;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #000000;
+            font-size:14px;
+            font-weight: bold;
+            line-height: 1.4;
+            padding: 5px;
+            width: 100px
+        }
+
+
+
+
+
+
+
     </style>
 
 
@@ -107,8 +157,6 @@
 
             let total = 0;
 
- 
-
             // Recorremos todas las filas con contenido de la tabla
 
             for (let i = 1; i < tableReg.rows.length; i++) {
@@ -120,8 +168,6 @@
                     continue;
 
                 }
-
- 
 
                 let found = false;
 
@@ -142,7 +188,6 @@
                         total++;
 
                     }
-
                 }
 
                 if (found) {
@@ -156,12 +201,8 @@
                     // fila de la tabla
 
                     tableReg.rows[i].style.display = 'none';
-
                 }
-
             }
-
- 
 
             // mostramos las coincidencias
 
@@ -192,6 +233,8 @@
     </script>
 </head>
 
+
+
 <body background="https://www.larutadelsorigens.cat/filelook/full/128/1283336/marmol-wallpaper.jpg">
     <div id="app">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
@@ -214,7 +257,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="https://github.com/makryo/ProyectoHV">{{ __('Proyecto Intecap 2019') }}</a>
                             </li>
                             @if (Route::has('register'))
                             <!--

@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Detalles de registro</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,21 +13,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>Detalle</h1>
+                    <h1>Detalles</h1>
                     
                     <dl>
-                        <dt>codigo</dt><dd>{{ $employee->id }}</dd>
-                        <dt>nombre</dt><dd>{{ $employee->fullname }}</dd>
-                        <dt>telefono</dt><dd>{{ $employee->cellphone }}</dd>
-                        <dt>correo</dt><dd>{{ $employee->email }}</dd>
-                        <dt>direccion</dt><dd>{{ $employee->address }}</dd>
-                        <dt>area</dt><dd>{{ $employee->area }}</dd>
-                        <dt>fecha de inicio</dt><dd>{{ $employee->fech_init }}</dd>
-                        <dt>salario</dt><dd>{{ $employee->salario }}</dd>
+                        <dt>Código</dt><dd>{{ $employee->id }}</dd>
+                        <dt>Nombre</dt><dd>{{ $employee->fullname }}</dd>
+                        <dt>Teléfono</dt><dd>{{ $employee->cellphone }}</dd>
+                        <dt>Email</dt><dd>{{ $employee->email }}</dd>
+                        <dt>Dirección</dt><dd>{{ $employee->address }}</dd>
+                        <dt>Área</dt><dd>{{ $employee->area }}</dd>
+                        <dt>Fecha de inicio</dt><dd>{{ $employee->fech_init }}</dd>
+                        <dt>Salario</dt><dd>{{ $employee->salario }}</dd>
                     </dl>
                     <br>  
                     <a href="\" type="button" class="btn btn-danger">regresar</a>
-                    <a href="{{ route('empleado.edit', $employee->id) }}">Editar</a>
+                    <a href="{{ route('empleado.edit', $employee->id) }}" class="boton">Editar</a>
                 </div>
             </div>
         </div>

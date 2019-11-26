@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Editar registro</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,18 +13,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>Detalle</h1>
+                    <h1>Detalles</h1>
                     
                     <dl>
-                        <dt>codigo</dt><dd>{{ $client->id }}</dd>
-                        <dt>nombre</dt><dd>{{ $client->fullname }}</dd>
-                        <dt>numero</dt><dd>{{ $client->cellphone }}</dd>
-                        <dt>correo</dt><dd>{{ $client->email }}</dd>
-                        <dt>direccion</dt><dd>{{ $client->address }}</dd>
+                        <dt>Código</dt><dd>{{ $client->id }}</dd>
+                        <dt>Nombre</dt><dd>{{ $client->fullname }}</dd>
+                        <dt>Número</dt><dd>{{ $client->cellphone }}</dd>
+                        <dt>Email</dt><dd>{{ $client->email }}</dd>
+                        <dt>Dirección</dt><dd>{{ $client->address }}</dd>
                     </dl>
                     <br>  
-                    <a href="/" type="button" class="btn btn-danger">regresar</a>
-                    <a href="{{ route('cliente.edit', $client->id) }}">Editar</a>
+                    <a href="/" type="button" class="btn btn-danger">Regresar</a>
+                    
+                    <a href="{{ route('reservacion.create') }}" type="button" class="btn btn-success">Nueva reservación</a>
+
+                    <a href="{{ route('cliente.edit', $client->id) }}" class="boton">Editar</a>
                 </div>
             </div>
         </div>

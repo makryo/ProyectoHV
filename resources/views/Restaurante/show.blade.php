@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Detalles de registro</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,17 +13,17 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>Detalle</h1>
+                    <h1>Detalles</h1>
                     
                     <dl>
-                        <dt>codigo</dt><dd>{{ $menu->id }}</dd>
-                        <dt>nombre</dt><dd>{{ $menu->name }}</dd>
-                        <dt>numero</dt><dd>{{ $menu->price }}</dd>
+                        <dt>Código</dt><dd>{{ $menu->id }}</dd>
+                        <dt>Nombre</dt><dd>{{ $menu->name }}</dd>
+                        <dt>Precio</dt><dd>{{ $menu->price }}</dd>
                         
                     </dl>
                     <br>  
-                    <a href="/" type="button" class="btn btn-danger">regresar</a>
-                    <a href="{{ route('Restaurante.edit', $menu->id) }}">Editar</a>
+                    <a href="/" type="button" class="btn btn-danger">Regresar</a>
+                    <a href="{{ route('Restaurante.edit', $menu->id) }}" class="boton">Editar</a>
                 </div>
             </div>
         </div>

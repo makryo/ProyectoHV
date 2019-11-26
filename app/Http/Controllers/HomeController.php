@@ -32,7 +32,7 @@ class HomeController extends Controller
         return view('welcome', compact('user'));
     }
 
-       public function create()
+    public function create()
     {
         return view('usuarios/create');
     }

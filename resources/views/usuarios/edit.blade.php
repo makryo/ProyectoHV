@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Editar registro</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>Nuevo usuario</h1>
+                    <h1>Actualizar datos</h1>
                     <div class="container">
                     
                         <form method="post" action="{{ route('home.update', $Edita->id) }}">
@@ -22,12 +22,14 @@
                             @method('PATCH')
                             {{ csrf_field() }}
 
-                            <label>Formulario</label><br>
                             <br>
-                            <input type="text" name="name" value="{{ $Edita->name }}"><br>
-                            <input type="text" name="email" value="{{ $Edita->email }}"><br>
-                            <input type="password" name="password" value="{{ $Edita->password }}"><br>
-                            <input type="submit" name="Guardar"><br>
+                            <input type="text" name="name" value="{{ $Edita->name }}" required>
+                            <br>
+                            <input type="text" name="email" value="{{ $Edita->email }}" required>
+                            <br>
+                            <input type="password" name="password" value="{{ $Edita->password }}" required>
+                            <br>
+                            <input type="submit" value="Guardar">
                         </form>
 
                       

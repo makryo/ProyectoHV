@@ -164,9 +164,9 @@ footer {
         <div><a href="roland350under@gmail.com">roland350under@gmail.com</a></div>
       </div>
       <div id="project">
-        <div><span>TIPO</span>Reporte de reservacones</div>
+        <div><span>TIPO</span>Reporte de reservaciones</div>
         <div><span>NOMBRE</span>Hotel y restaurante Victoria</div>
-        <div><span>DIRECCION</span>2.da calle 9-99 zona 1 ,Chiquimula, Guatemala</div>
+        <div><span>DIRECCIÓN</span>2.da calle 9-99 zona 1 ,Chiquimula, Guatemala</div>
         <div><span>EMAIL</span> <a href="mailto:roland350under@gmail.com">roland350under@gmail.com</a></div>
         <div><span>FECHA</span>
             <?php  
@@ -182,9 +182,10 @@ footer {
 
 <tr>
                                         
-    <th class="service">HABITACION</th>
+    <th class="service">HABITACIÓN</th>
+    <th class="service">PRECIO</th>
     <th class="service">NOMBRE</th>
-    <th class="service">ATENDIO</th>
+    <th class="service">ATENDIÓ</th>
     <th class="service">INGRESO</th>
     <th class="service">SALIDA</th>
 
@@ -212,6 +213,8 @@ footer {
                             
                                 echo "<tr><td class='service'>"
                                     . $values["number"]
+                                    . "</td><td class='desc'>"
+                                    . $values["price"]
                                     . "</td><td class='desc'>"
                                     . $values["fullname"]
                                     . "</td><td class='desc'>"

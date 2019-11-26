@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Detalles de registro</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,22 +13,24 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>Detalle</h1>
+                    <h1>Detalles</h1>
                     
                     <dl>
-                        <dt>codigo</dt><dd>{{ $rooms->number }}</dd>
-                        <dt>nombre</dt><dd>{{ $rooms->price }}</dd>
-                        <dt>telefono</dt><dd>{{ $rooms->level }}</dd>
-                        <dt>correo</dt><dd>{{ $rooms->state }}</dd>
-                        <dt>direccion</dt><dd>{{ $rooms->air }}</dd>
-                        <dt>area</dt><dd>{{ $rooms->implement }}</dd>
-                        <dt>fecha de inicio</dt><dd>{{ $rooms->furniture }}</dd>
-                        <dt>salario</dt><dd>{{ $rooms->dimension }}</dd>
+                        <dt>Número</dt><dd>{{ $rooms->number }}</dd>
+                        <dt>Precio</dt><dd>{{ $rooms->price }}</dd>
+                        <dt>Nivel</dt><dd>{{ $rooms->level }}</dd>
+                        <dt>Estado</dt><dd>{{ $rooms->state }}</dd>
+                        <dt>Tipo de aire</dt><dd>{{ $rooms->air }}</dd>
+                        <dt>Implementos</dt><dd>{{ $rooms->implement }}</dd>
+                        <dt>Amueblado</dt><dd>{{ $rooms->furniture }}</dd>
+                        <dt>Dimensión</dt><dd>{{ $rooms->dimension }}</dd>
 
                     </dl>
                     <br>  
-                    <a href="\" type="button" class="btn btn-danger">regresar</a>
-                    <a href="{{ route('habitacion.edit', $rooms->id) }}">Editar</a>
+                    <a href="\" type="button" class="btn btn-danger">Regresar</a>
+
+                    <a href="{{ route('habitacion.edit', $rooms->id) }}" class="boton">Editar</a>
+                
                 </div>
             </div>
         </div>
