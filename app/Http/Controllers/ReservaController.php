@@ -45,7 +45,7 @@ class ReservaController extends Controller
     public function store(Request $request)
     {
         $reserva = Reservacion::create($request->all());
-        return view('reservacion/create',compact('reserva'));        
+        return view('reservacion/mensajeRegistro',compact('reserva'));        
     }
 
     /**
