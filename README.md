@@ -1,2 +1,2 @@
 # ProyectoHV
-Proyecto de graduacion Universidad Mariano Galvez
+Proyecto de certificacion INTECAP
